@@ -74,11 +74,6 @@ Binance WebSocket ──→  websocket_feed.py  ──→  SQLite (live trades +
 - Binance API key (free account, read-only is sufficient)
 - Alpaca API key (free paper trading account)
 
-Set environment variables:
-```bash
-export APCA_API_KEY_ID="your_key"
-export APCA_API_SECRET_KEY="your_secret"
-```
 
 ### Installation
 ```bash

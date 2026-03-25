@@ -29,6 +29,8 @@ Binance WebSocket ──→  websocket_feed.py  ──→  SQLite (live trades +
                                                       │
                                               main.py (Streamlit)
 ```
+## Output
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/ae976e5c-a7c4-4169-a37e-a670f9f62e5a" />
 
 ---
 

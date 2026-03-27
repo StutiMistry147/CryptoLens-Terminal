@@ -1,21 +1,14 @@
-# CryptoLens Terminal
+# 💳 CryptoLens Terminal 💳
 
-A professional-grade cryptocurrency analytics and paper trading platform 
-combining real-time market data, machine learning price prediction, and 
-automated strategy execution in a Bloomberg-style terminal dashboard.
+A cryptocurrency analytics platform that streams live Binance market data,
+engineers technical indicators as ML features, and runs a PyTorch LSTM with
+Hidden Markov Model regime detection to predict next-candle price movement —
+visualized through a Streamlit dashboard with paper trading execution via Alpaca.
 
----
-
-## Overview
-
-CryptoLens Terminal is a full end-to-end trading research platform. It 
-streams live data from Binance, engineers financial features, trains a 
-PyTorch LSTM with Hidden Markov Model regime detection, and executes 
-signals via Alpaca's paper trading API — all visualized through a 
-dark-mode Streamlit dashboard.
+_> Without API keys the dashboard runs in demo mode with synthetic data._
+_> Live features require valid Binance and Alpaca keys._
 
 ---
-
 ## Architecture
 ```
 Binance REST API  ──→  data_collector.py  ──→  SQLite (crypto_data.db)
@@ -29,13 +22,11 @@ Binance WebSocket ──→  websocket_feed.py  ──→  SQLite (live trades +
                                                       │
                                               main.py (Streamlit)
 ```
-## Output
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/ae976e5c-a7c4-4169-a37e-a670f9f62e5a" />
 
 ---
 
 ## ML Pipeline
-
 **Feature Engineering**
 - RSI (14), MACD (12/26/9), Bollinger Bands (20)
 - Order Book Imbalance (OBI) — computed from top-5 bid/ask levels,
@@ -105,24 +96,4 @@ python ml_predictor.py
 # 5. Launch the dashboard
 streamlit run main.py
 ```
-
-> **Note:** Without API keys the dashboard runs in demo mode with 
-> synthetic data. Live features require valid Binance and Alpaca keys.
-
----
-
-## Project Structure
-```
-cryptolens-terminal/
-├── streamlit/
-├── main.py              # Streamlit dashboard
-├── database.py          # SQLite schema and utilities
-├── data_collector.py    # Binance REST API — historical OHLCV + order book
-├── websocket_feed.py    # Binance WebSocket — live trades + book ticker
-├── ml_predictor.py      # LSTM + HMM model training and inference
-├── alpaca_trader.py     # Alpaca paper trading execution loop
-├── requirements.txt     # Dependencies
-└── README.md
-```
-
 ---

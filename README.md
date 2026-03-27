@@ -1,4 +1,4 @@
-# 💳 CryptoLens Terminal 💳
+# CryptoLens Terminal
 
 A cryptocurrency analytics platform that streams live Binance market data,
 engineers technical indicators as ML features, and runs a PyTorch LSTM with
